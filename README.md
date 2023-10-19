@@ -4,9 +4,9 @@ A simple Flutter application that demonstrates the use of the Provider package f
 
 ## Features
 
-- Increment Counter
-- Decrement Counter
-- Reset Counter to Zero
+- ChangeNotifierProvider
+- context.watch
+- context.read
 
 ## Getting Started
 

@@ -5,6 +5,8 @@ import '../models/counter_model.dart';
 class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final counter = context.watch<CounterModel>();
+
     return Scaffold(
       appBar: AppBar(title: Text('Counter App')),
       body: Center(
@@ -12,16 +14,16 @@ class HomeScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text('You have pushed the button this many times:'),
-            Consumer<CounterModel>(
-              builder: (context, counter, child) =>
-                  Text('${counter.counter}', style: TextStyle(fontSize: 32)),
+            Text(
+              '${counter.counter}',
+              style: TextStyle(fontSize: 32),
             ),
           ],
         ),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          Provider.of<CounterModel>(context, listen: false).increment();
+          context.read<CounterModel>().increment();
         },
         child: Icon(Icons.add),
       ),
