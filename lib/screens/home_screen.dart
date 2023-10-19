@@ -3,20 +3,22 @@ import 'package:provider/provider.dart';
 import '../models/counter_model.dart';
 
 class HomeScreen extends StatelessWidget {
+  const HomeScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     final counter = context.watch<CounterModel>();
 
     return Scaffold(
-      appBar: AppBar(title: Text('Counter App')),
+      appBar: AppBar(title: const Text('Provider Counter App')),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text('You have pushed the button this many times:'),
+            const Text('You have pushed the button this many times:'),
             Text(
               '${counter.counter}',
-              style: TextStyle(fontSize: 32),
+              style: const TextStyle(fontSize: 32),
             ),
           ],
         ),
@@ -25,7 +27,7 @@ class HomeScreen extends StatelessWidget {
         onPressed: () {
           context.read<CounterModel>().increment();
         },
-        child: Icon(Icons.add),
+        child: const Icon(Icons.add),
       ),
     );
   }
