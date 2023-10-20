@@ -1,6 +1,6 @@
 # Provider Counter App
 
-A simple Flutter application that demonstrates the use of the Provider package for state management.
+A simple Flutter application that demonstrates the use of the Provider package for state management...
 
 ## Features
 
